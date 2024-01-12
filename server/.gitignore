@@ -1,3 +1,5 @@
 /env
 .idea
 .env
+/static
+/media
