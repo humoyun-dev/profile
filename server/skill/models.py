@@ -9,7 +9,6 @@ class SkillName(models.Model):
 class Skill(models.Model):
     skillName = models.ForeignKey(SkillName, on_delete=models.CASCADE)
     name = models.CharField(max_length=244)
-    description = models.TextField()
     image = models.ImageField(upload_to='skill/images')
 
     def __str__(self):

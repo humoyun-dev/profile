@@ -1,3 +1,11 @@
-from django.shortcuts import render
+from rest_framework import generics
+from .serializer import *
 
-# Create your views here.
+class SkillNameListAPIView(generics.ListAPIView):
+    queryset = SkillName.objects.all()
+    serializer_class = SkillNameSerializer
+
+
+class CVListAPIView(generics.ListAPIView):
+    queryset = CV.objects.all()
+    serializer_class = CVSerializer

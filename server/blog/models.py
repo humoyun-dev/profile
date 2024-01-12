@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from user.models import CustomUser
+from django.urls import reverse
 
 def generate_unique_slug(model, name, base_slug=None):
     if not base_slug:
@@ -26,6 +27,9 @@ class Blog(models.Model):
     def save(self, *args, **kwargs):
         self.slug = generate_unique_slug(Blog, self.title)
         super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('blog-detail', args=[str(self.slug)])
 
     def __str__(self):
         return self.title
