@@ -64,6 +64,9 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'config.urls'
 
 CORS_ALLOWED_ORIGINS = [
+    'https://api.humoyundev.uz',
+    'https://humoyundev.uz',
+    'https://www.humoyundev.uz',
     "http://localhost:5173",
 ]
 
