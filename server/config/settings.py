@@ -63,6 +63,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'config.urls'
 
+CSRF_TRUSTED_ORIGINS = ['https://api.humoyundev.uz']
+
 CORS_ALLOWED_ORIGINS = [
     'https://api.humoyundev.uz',
     'https://humoyundev.uz',
