@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-
 class CustomUser(AbstractUser):
     first_name = models.CharField(max_length=155, blank=True, null=True)
     last_name = models.CharField(max_length=158, blank=True, null=True)
