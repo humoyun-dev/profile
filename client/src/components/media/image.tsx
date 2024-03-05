@@ -1,37 +1,40 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 
-interface CustomImageProps {
-  image: string;
-  className?: string | undefined;
+interface Props {
+  src: string;
   alt: string;
-  onClick?: any;
+  className?: string;
+  width?: number;
+  height?: number;
+  onClick?: () => void;
 }
 
-const CustomImage: React.FC<CustomImageProps> = ({
-  className,
-  image,
+const Image: React.FC<Props> = ({
   alt,
+  src,
+  className,
   onClick,
+  height,
+  width,
 }) => {
   const [loading, setLoading] = useState(true);
   return (
-    <Image
-      onClick={onClick}
-      src={image}
+    <img
+      src={src}
+      width={width}
+      height={height}
       alt={alt}
-      width={999}
-      height={999}
+      onClick={onClick}
       className={twMerge(
         `duration-700 ease-in-out group-hover:opacity-75 ${
           loading ? "blur-2xl grayscale" : "blur-0 grayscale-0"
         }}`,
-        className,
+        className
       )}
-      onLoadingComplete={() => setLoading(false)}
+      onLoad={() => setLoading(false)}
     />
   );
 };
 
-export default CustomImage;
+export default Image;
