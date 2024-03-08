@@ -66,10 +66,10 @@ ROOT_URLCONF = 'config.urls'
 CSRF_TRUSTED_ORIGINS = ['https://api.humoyundev.uz']
 
 CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
     'https://api.humoyundev.uz',
     'https://humoyundev.uz',
     'https://www.humoyundev.uz',
-    "http://localhost:5173",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
