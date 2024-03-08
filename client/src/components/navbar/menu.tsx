@@ -26,7 +26,6 @@ const Menu = ({ isOpen, onChange, links }: Props) => {
             className={`flex items-center space-x-2 cursor-pointer`}
             onClick={function () {
               router("/");
-              onChange();
             }}
           >
             <Image
