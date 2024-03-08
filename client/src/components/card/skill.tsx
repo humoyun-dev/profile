@@ -1,22 +1,14 @@
 import React from "react";
 import { Image } from "..";
+import { SkillItemProps } from "@/interfaces/skills.interface";
+import { api } from "@/api.json";
 
-interface SkillCardProps {
-  title: string;
-  status: string;
-  image: string;
-}
-
-const SkillCard: React.FC<SkillCardProps> = ({ image, status, title }) => {
+const SkillCard: React.FC<SkillItemProps> = ({ image, name }) => {
   return (
     <div className="relative cursor-pointer transition">
-      <Image
-        alt={title}
-        src={image}
-        className="bg-violet-600 rounded-xl hover:scale-110"
-      />
-      <div className="absolute bottom-1 text-sm left-1 py-1 px-2 rounded-full bg-gray-800/70 text-white font-bold backdrop-blur-md">
-        {title} - {status}
+      <Image alt={name} src={`${api}${image}`} className="hover:scale-110 " />
+      <div className="absolute hidden md:block bottom-1 text-lg left-1 px-2 rounded-md bg-white/80 text-primary font-bold backdrop-blur-sm">
+        {name}
       </div>
     </div>
   );

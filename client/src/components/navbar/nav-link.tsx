@@ -12,7 +12,7 @@ interface Props {
 const NavLink: React.FC<Props> = ({ href, children, className }) => {
   const { pathname } = useLocation();
   return (
-    <Link className={className} to={href}>
+    <Link to={href}>
       <Button
         className={cn("hover:bg-primary hover:text-white px-6", className)}
         variant={href == pathname ? "default" : "secondary"}

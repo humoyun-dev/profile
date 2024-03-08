@@ -1,4 +1,4 @@
-import { Image, TypedText } from "@/components";
+import { DownloadButton, Image, TypedText } from "@/components";
 import { Button } from "@/components/ui/button";
 import { FaFacebook, FaGithub, FaInstagram, FaTelegram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -40,9 +40,9 @@ const HomePage = () => {
 
   return (
     <section
-      className={`mx-auto min-h-screen flex items-center justify-between`}
+      className={`mx-auto min-h-screen md:py-0 py-24 space-y-12 flex md:flex-row flex-col items-center justify-between`}
     >
-      <div className={`w-7/12`}>
+      <div className={`md:w-7/12`}>
         <p
           className={`text-4xl font-semibold`}
         >{`Assalomu alaykum 👋. It's Me`}</p>
@@ -73,27 +73,27 @@ const HomePage = () => {
               </li>
             ))}
           </ul>
-          <Button className={`mt-8 text-xl`}>Download CV</Button>
+          <DownloadButton/>
         </div>
       </div>
-      <div className={`w-5/12 relative flex items-center justify-center`}>
+      <div className={`md:w-5/12 relative flex items-center justify-center w-full`}>
         <div
-          className={`absolute w-[100px] left-10 border-black border shadow-md shadow-primary top-10 -z-10 h-[100px] bg-violet-700 rounded-full flex items-center justify-center`}
+          className={`absolute w-[100px] md:left-10 -left-12 border-black border shadow-md shadow-primary top-10 -z-10 h-[100px] bg-violet-700 rounded-full flex items-center justify-center`}
         >
           <p className={`text-5xl -rotate-45`}>😎</p>
         </div>
         <div
-          className={`absolute w-[100px] right-0 border-black border shadow-md shadow-primary top-10 -z-10 h-[100px] bg-violet-700 rounded-full flex items-center justify-center`}
+          className={`absolute w-[100px] md:right-0 -right-6 border-black border shadow-md shadow-primary top-10 -z-10 h-[100px] bg-violet-700 rounded-full flex items-center justify-center`}
         >
           <p className={`text-5xl`}>🎉</p>
         </div>
         <div
-          className={`absolute w-[100px] -bottom-10 left-20  border-black border shadow-md shadow-primary  h-[100px] bg-violet-700 rounded-full flex items-center justify-center`}
+          className={`absolute w-[100px] md:-bottom-10 -bottom-[60px] left-20  border-black border shadow-md shadow-primary  h-[100px] bg-violet-700 rounded-full flex items-center justify-center`}
         >
           <p className={`text-5xl`}>💻</p>
         </div>
         <div
-          className={`rounded-full overflow-hidden bg-blue-500 border w-[400px] h-[400px] border-black shadow-lg shadow-primary`}
+          className={`rounded-full overflow-hidden bg-blue-500 border md:w-[400px] md:h-[400px] w-[300px] border-black shadow-lg shadow-primary`}
         >
           <Image alt={`banner`} src={`/banner.jpg`} className={`scale-110`} />
         </div>
